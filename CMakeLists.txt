@@ -5,6 +5,8 @@ set(CMAKE_CXX_STANDARD 23)
 
 find_package(fmt REQUIRED)
 
-add_executable(circle_detection main.cpp Point.hpp Circle.hpp ransac.hpp)
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
 
-target_link_libraries(circle_detection fmt::fmt)
+add_executable(circle_detection main.cpp Point.hpp Circle.hpp ransac.hpp)
+target_link_libraries(circle_detection fmt::fmt  ${OpenCV_LIBS})

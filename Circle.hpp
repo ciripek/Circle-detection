@@ -1,7 +1,3 @@
-//
-// Created by bence on 2022.11.30..
-//
-
 #ifndef CIRCLE_DETECTION_CIRCLE_HPP
 #define CIRCLE_DETECTION_CIRCLE_HPP
 

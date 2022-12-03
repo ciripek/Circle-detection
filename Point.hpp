@@ -1,6 +1,3 @@
-//
-// Created by bence on 2022.11.11..
-//
 #ifndef CIRCLE_DETECTION_POINT_H
 #define CIRCLE_DETECTION_POINT_H
 #include <iostream>
