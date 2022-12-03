@@ -5,7 +5,7 @@
 
 #include <limits>
 #include <cmath>
-
+#include <array>
 constexpr static int int_min = std::numeric_limits<int>::min();
 
 class Circle {
@@ -13,6 +13,10 @@ public:
     Circle(): radius(0.F), supported_points(int_min){}
     Circle(Point center, float radius): center(center), radius(radius), supported_points(int_min){}
 
+
+    static Circle CircleFromThreePoints(const std::array<Point, 3> &arr){
+       return CircleFromThreePoints(arr[0], arr[1], arr[2]);
+    }
     static Circle CircleFromThreePoints(Point p1, Point p2, Point p3) {
         float x1 = p1.x;
         float y1 = p1.y;
