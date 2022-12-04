@@ -3,7 +3,7 @@
 #include <iterator>
 #include <vector>
 
-#include "Point.hpp"
+#include "ransac.hpp"
 
 void read_from_file(const char* filename, std::vector<Point>& points);
 
@@ -18,10 +18,14 @@ int main(int argc , char** argv) {
     read_from_file(argv[1], points);
 
     if (points.empty()) {
-        fmt::print(stderr, "Reading from the file was");
+        fmt::print(stderr, "Reading from the file was unsuccessful");
     }
 
-    fmt::print("{}", points);
+    RANSAC ransac(100000, 0.5);
+    ransac.run(points);
+    const Circle best = ransac.getBestModel();
+    fmt::print("{}\n", best);
+
     return 0;
 }
 

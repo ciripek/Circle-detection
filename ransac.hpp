@@ -25,6 +25,11 @@ public:
             }
         }
     }
+
+    const Circle &getBestModel() const {
+        return bestModel;
+    }
+
 private:
     int iteration;
     float error;
