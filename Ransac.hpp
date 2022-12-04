@@ -23,7 +23,7 @@ private:
     Circle bestModel;
     std::mt19937 gen{std::random_device{}()};
     static constexpr std::size_t sample_size = 3U;
-    std::mutex mutex;
+    std::mutex random_lock, max_lock;
 
 
     static void count_supporting_points(Circle& circle, const std::vector<Point>& dataSet, float error);

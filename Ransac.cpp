@@ -11,14 +11,14 @@ void RANSAC::run(const std::vector<Point> &dataSet) {
     for (int i = 0; i < iteration; ++i) {
         boost::asio::post([this, &dataSet](){
             std::array<Point, sample_size> point;
-            mutex.lock();
+            random_lock.lock();
             std::sample(dataSet.cbegin(), dataSet.cend(), point.begin(), sample_size, gen);
-            mutex.unlock();
+            random_lock.unlock();
 
             Circle circle = Circle::CircleFromThreePoints(point);
             count_supporting_points(circle, dataSet, error);
 
-            const std::lock_guard<std::mutex>  scoped_lock(mutex);
+            const std::lock_guard<std::mutex>  scoped_lock(max_lock);
             if (circle.getSupportedPoints() > bestModel.getSupportedPoints()){
                 bestModel = circle;
             }
