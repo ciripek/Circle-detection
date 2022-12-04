@@ -53,6 +53,17 @@ public:
         return supported_points;
     }
 
+    void setSupportedPoints(int supportedPoints) {
+        supported_points = supportedPoints;
+    }
+
+
+    [[nodiscard]] bool is_point_supported(const Point &point, float error) const {
+        const float distance = std::abs(std::hypot(point.x - center.x, point.y - center.y) - radius);
+        return distance < error;
+    }
+
+
 private:
     Point center;
     float radius;
