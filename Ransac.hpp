@@ -1,6 +1,7 @@
 #ifndef CIRCLE_DETECTION_RANSAC_HPP
 #define CIRCLE_DETECTION_RANSAC_HPP
 
+#include <mutex>
 #include <random>
 #include <vector>
 
@@ -22,7 +23,9 @@ private:
     Circle bestModel;
     std::mt19937 gen{std::random_device{}()};
     static constexpr std::size_t sample_size = 3U;
-    
+    std::mutex mutex;
+
+
     static void count_supporting_points(Circle& circle, const std::vector<Point>& dataSet, float error);
 };
 
