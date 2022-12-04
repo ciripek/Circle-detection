@@ -17,8 +17,8 @@ void write_to_image(const char* filename, const std::vector<Point>& points, cons
 
 int main(int argc , char** argv) {
     std::vector<Point> points;
-    if (argc != 2) {
-        fmt::print(stderr, "Usage: cirle_detection file.text");
+    if (argc != 4) {
+        fmt::print(stderr, "Usage: cirle_detection file.text iteration error");
         return EXIT_FAILURE;
     }
 
@@ -30,7 +30,7 @@ int main(int argc , char** argv) {
         return EXIT_FAILURE;
     }
 
-    RANSAC ransac(1024 * 1024 * 1024, 1);
+    RANSAC ransac(std::stoi(argv[2]), std::stof(argv[3]));
     ransac.run(points);
     const Circle best = ransac.getBestModel();
     fmt::print("{}\n", best);
