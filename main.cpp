@@ -9,7 +9,7 @@
 #include <vector>
 
 
-#include "ransac.hpp"
+#include "Ransac.hpp"
 
 void read_from_file(const char* filename, std::vector<Point>& points);
 void write_to_image(const char* filename, const std::vector<Point>& points, const Circle& circle);
