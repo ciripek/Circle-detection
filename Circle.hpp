@@ -1,11 +1,12 @@
 #ifndef CIRCLE_DETECTION_CIRCLE_HPP
 #define CIRCLE_DETECTION_CIRCLE_HPP
 
+#include <array>
+#include <cmath>
+#include <limits>
+
 #include "Point.hpp"
 
-#include <limits>
-#include <cmath>
-#include <array>
 constexpr static int int_min = std::numeric_limits<int>::min();
 
 class Circle {

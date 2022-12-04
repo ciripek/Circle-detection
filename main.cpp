@@ -1,7 +1,7 @@
-#include <vector>
+#include <fmt/ranges.h>
 #include <fstream>
 #include <iterator>
-#include <fmt/ranges.h>
+#include <vector>
 
 #include "Point.hpp"
 

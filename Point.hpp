@@ -1,7 +1,7 @@
-#ifndef CIRCLE_DETECTION_POINT_H
-#define CIRCLE_DETECTION_POINT_H
-#include <iostream>
+#ifndef CIRCLE_DETECTION_POINT_HPP
+#define CIRCLE_DETECTION_POINT_HPP
 #include <fmt/format.h>
+#include <iostream>
 
 class Point {
 public:
@@ -32,4 +32,4 @@ template <> struct fmt::formatter<Point> {
 
 
 
-#endif //CIRCLE_DETECTION_POINT_H
+#endif //CIRCLE_DETECTION_POINT_HPP

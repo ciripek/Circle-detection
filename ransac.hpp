@@ -1,11 +1,12 @@
 #ifndef CIRCLE_DETECTION_RANSAC_HPP
 #define CIRCLE_DETECTION_RANSAC_HPP
 
-#include "Circle.hpp"
-#include <vector>
+#include <algorithm>
 #include <array>
 #include <random>
-#include <algorithm>
+#include <vector>
+
+#include "Circle.hpp"
 
 class RANSAC {
 public:
