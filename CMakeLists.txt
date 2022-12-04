@@ -8,5 +8,5 @@ find_package(fmt REQUIRED)
 find_package( OpenCV REQUIRED )
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
-add_executable(circle_detection main.cpp Point.hpp Circle.hpp Ransac.hpp)
+add_executable(circle_detection main.cpp Point.hpp Circle.hpp Ransac.hpp Ransac.cpp Circle.cpp)
 target_link_libraries(circle_detection fmt::fmt  ${OpenCV_LIBS})
