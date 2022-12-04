@@ -12,7 +12,7 @@ public:
 
     void run(const std::vector<Point>& dataSet);
 
-    const Circle &getBestModel() const {
+    [[nodiscard]] const Circle &getBestModel() const {
         return bestModel;
     }
 
