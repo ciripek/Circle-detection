@@ -18,7 +18,7 @@ void RANSAC::run(const std::vector<Point> &dataSet) {
 }
 
 void RANSAC::count_supporting_points(Circle &circle, const std::vector<Point> &dataSet, float error) {
-    int count = std::count_if(dataSet.cbegin(), dataSet.cend(), [error, &circle](const Point& point){
+    const int count = std::count_if(dataSet.cbegin(), dataSet.cend(), [error, &circle](const Point& point){
         return circle.is_point_supported(point, error);
     });
     circle.setSupportedPoints(count);
